@@ -19,7 +19,7 @@ export class ProjectResolver {
   }
 
   @Query(() => Project, { name: 'project' })
-  findOne(@Args('id', { type: () => Int }) id: string) {
+  findOne(@Args('id', { type: () => String }) id: string) {
     return this.projectService.findOne(id);
   }
 

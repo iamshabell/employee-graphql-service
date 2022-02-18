@@ -8,18 +8,21 @@ type Employee {
   lastName: String!
   designation: String!
   city: String
+  project: Project!
+  projectId: String!
 }
 
 type Project {
   id: String!
   name: String!
   code: Int!
+  employees: [Employee!]
 }
 
 type Query {
   getAllEmployee: [Employee!]!
   getAllProject: [Project!]!
-  project(id: Int!): Project!
+  project(id: String!): Project!
 }
 
 type Mutation {
@@ -34,6 +37,7 @@ input EmployeeCreateDTO {
   lastName: String!
   designation: String!
   city: String
+  projectId: String!
 }
 
 input CreateProjectInput {
